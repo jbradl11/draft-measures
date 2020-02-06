@@ -1,5 +1,11 @@
 language: ruby
 jdk: oraclejdk8
 rvm: 2.2
-before_install: gem install jekyll
+before_install: 
+  - gem install jekyll
+  - sudo chown -R travis ./travis/pull_data.sh
+  - sudo chown +x ./travis/pull_data.sh
+  - ./travis/pull_data.sh
 script: ant -buildfile build.xml travis-publish-ig -Dguidename=cqfmeasures -Dspec=http://hl7-fhir.github.io/
+services:
+  - docker
