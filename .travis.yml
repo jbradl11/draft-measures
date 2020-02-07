@@ -1,6 +1,6 @@
 language: ruby
 jdk: oraclejdk9
-rvm: 2.2
+rvm: 2.3
 before_install: 
   - docker run --name cqf-ruler --rm -dit -p 8080:8080 contentgroup/cqf-ruler:latest
   - sudo chown -R travis ./travis/pull_data.sh
