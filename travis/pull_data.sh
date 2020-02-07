@@ -15,4 +15,4 @@ echo ">Installing FHIR Patient Generator CLI..."
 npm install -g fhir-bundle-calculator
 
 echo ">Calculate Bundles..."
-calculate-bundles -d ./EXM_130/patients-r4/ -c ./../draft-measures/pages/cql/in-progress/fhir4/EXM130_FHIR4-7.2.000.cql -u http://localhost:8080/cqf-ruler-r4
+calculate-bundles -d ./EXM_130/patients-r4/ -c jbradl11/draft-measures/pages/cql/in-progress/fhir4/EXM130_FHIR4-7.2.000.cql -u http://localhost:8080/cqf-ruler-r4
