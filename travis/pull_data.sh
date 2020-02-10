@@ -14,8 +14,7 @@ echo ">Installing FHIR Patient Generator CLI..."
 npm install -g fhir-bundle-calculator
 
 echo ">Calculate Bundles..."
-cd fhir-bundle-calculator
-cd EXM_130
+cd fhir-patient-generator/EXM_130
 make connectathon
 make .seed-cqf-ruler-r4
 cd ../..
