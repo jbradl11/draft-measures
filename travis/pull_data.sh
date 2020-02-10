@@ -18,6 +18,7 @@ cd EXM_130
 
 echo ">Calculate Bundles..."
 
+make .connectathon
 make .seed-cqf-ruler-r4
 
 cd ..
