@@ -3,15 +3,21 @@ jdk: oraclejdk9
 rvm: 2.4
 before_install: 
   - docker run --name cqf-ruler --rm -dit -p 8080:8080 contentgroup/cqf-ruler:latest
+  - sudo chown -R travis ./travis/setup.sh
+  - sudo chmod +x ./travis/setup.sh
+  - ./travis/setup.sh
+
   - sudo chown -R travis ./travis/pull_data.sh
   - sudo chmod +x ./travis/pull_data.sh
-  - ./travis/pull_data.sh
-script: 
+  
   - CHANGED_FILES=($(git diff --name-only $TRAVIS_COMMIT_RANGE))
   - echo $CHANGED_FILES
   - for file in $CHANGED_FILES; do
     echo $file;
+    ./travis/pull_data.sh $file;
     done
-  - ant -buildfile build.xml travis-publish-ig -Dguidename=cqfmeasures -Dspec=http://hl7-fhir.github.io/
+
+#  - ./travis/pull_data.sh
+script: - ant -buildfile build.xml travis-publish-ig -Dguidename=cqfmeasures -Dspec=http://hl7-fhir.github.io/
 services:
   - docker
