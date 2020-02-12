@@ -5,8 +5,8 @@ echo "> Working dir: $WORKING_DIR"
 
 echo ">Calculate Bundles..."
 echo $0
-FILE = $0
-cd fhir-patient-generator/$FILE
+file-name = $0
+cd fhir-patient-generator/$file-name
 make connectathon
 make .seed-cqf-ruler-r4
 cd ../..
