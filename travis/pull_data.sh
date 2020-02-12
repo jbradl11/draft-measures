@@ -4,8 +4,8 @@ export WORKING_DIR='pwd'
 echo "> Working dir: $WORKING_DIR"
 
 echo ">Calculate Bundles..."
-echo $1
-FILE = $1
+echo $0
+FILE = $0
 cd fhir-patient-generator/FILE
 make connectathon
 make .seed-cqf-ruler-r4
